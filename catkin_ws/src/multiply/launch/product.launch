@@ -1,0 +1,12 @@
+<launch>
+<!-- General arguments -->
+  <arg name="output" default="screen"/>
+  <arg name="respawn" default="false"/>
+
+  <node pkg="multiply" type="product.py" name="multiply"
+        output="$(arg output)" respawn="$(arg respawn)">
+  </node>
+  <node pkg="multiply" type="logger.py" name="logger"
+        output="$(arg output)" respawn="$(arg respawn)">
+  </node>
+</launch>
